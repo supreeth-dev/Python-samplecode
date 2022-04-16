@@ -5,11 +5,11 @@ class Iperson():
         """ in Child"""
 class PersonSingleton(Iperson):
     __instance=None
-    '''@staticmethod
+    @staticmethod
     def get_instance():
         if (PersonSingleton.__instance == None):
             PersonSingleton("Default",0)
-        return PersonSingleton.__instance'''
+        return PersonSingleton.__instance
     
     def __init__(self,name,age):
         if(PersonSingleton.__instance != None):
@@ -26,6 +26,9 @@ class PersonSingleton(Iperson):
 p = PersonSingleton("Mike", 30)        
 print(p)
 p.get_data()
+p2 = PersonSingleton.get_instance()
+print(p2)
+p2.get_data()
 #p = PersonSingleton("Mike1", 30)        
 #print(p)
 #p.get_data()
